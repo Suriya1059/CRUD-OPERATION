@@ -1,0 +1,53 @@
+<div class="cart-box">
+    <form [formGroup]="register" (ngSubmit)="SaveCustomer()">
+    <div class="row">
+        <h2 style="text-align: center;">Add/Edit Customer</h2>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Role Number</label>
+                <input type="text" id="txtcode" class="form-control" formControlName="id">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtname">Name</label>
+                <input type="text" id="txtname" class="form-control" formControlName="name">
+                <span class="Error" *ngIf="name && name.invalid && name.touched">Please Enter Name?</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtemail">Email</label>
+                <input type="text" id="txtemail" class="form-control" formControlName="email">
+                <span class="Error" *ngIf="email && email.invalid && email.touched">Please Enter Valid Email?</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtphone">Phone</label>
+                <input type="text" id="txtphone" class="form-control" formControlName="phone">
+                <span class="Error" *ngIf="phone && phone.invalid && phone.touched">Please Enter Phone Number?</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-2"><br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <br>
+            <span class="{{messageclass}}">{{message}}</span>
+        </div>
+    </div>
+</form>
+</div>
